@@ -13,6 +13,11 @@ describe("Test contact-us form via WebDriverUni",() =>{
     });
 
     it("Should not be able to submit a successful submission via contact-us form as all fields must be fullfilled", ()=>{
-        /* cypress code here */
+        cy.visit("http://www.webdriveruniversity.com/Contact-Us/contactus.html")
+        cy.get('[name="first_name"]').type("Jose")
+        cy.get('[name="last_name"]').type("Martinez")
+        cy.get('textarea.feedback-input').type("This is a test done with cypress")
+        cy.get('[type="submit"]').click()
+
     });
 })
