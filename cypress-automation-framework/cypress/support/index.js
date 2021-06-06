@@ -13,8 +13,16 @@
 // https://on.cypress.io/configuration
 // ***********************************************************
 
+// PLUGINS
+require('cypress-xpath')
+
+
 // Import commands.js using ES2015 syntax:
 import './commands'
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
+Cypress.Server.defaults({
+    whitelist: (xhr) => {
+    return true}
+})
